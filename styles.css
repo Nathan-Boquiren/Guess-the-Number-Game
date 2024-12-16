@@ -1,0 +1,150 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Luckiest Guy", Arial, Helvetica, sans-serif;
+}
+
+::selection {
+    background-color: white;
+    color: blueviolet;
+}
+
+body {
+    background-color: blueviolet;
+    color: white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+header {
+    padding: 50px 0;
+    text-align: center;
+}
+
+h1 {
+    font-weight: normal;
+    font-size: 3rem;
+    letter-spacing: 2px;
+}
+
+.subheading {
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    padding-top: 30px;
+}
+
+
+#input-container {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin: 0 50px;
+}
+
+input {
+    background-color: rgb(241, 225, 255);
+    border: none;
+    outline: 2px solid rgb(57, 0, 110);
+    padding: 10px 20px;
+    border-radius: 100vmax;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+    text-align: center;
+    width: clamp(250px, 30vw, 400px);
+    color: rgb(90, 0, 173);
+    transition: width 0.2s ease;
+}
+
+input:focus {
+    outline-width: 4px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.199);
+
+}
+
+input::selection {
+    background-color: blueviolet;
+    color: white;
+}
+
+button {
+    border: none;
+    outline: 2px solid white;
+    padding: 10px 15px;
+    background-color: blueviolet;
+    color: white;
+    transition: all 0.2s ease;
+    border-radius: 100vmax;
+    font-size: 1.5rem;
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
+    font-weight: 600;
+}
+
+button:hover, button:active {
+    background-color: white;
+    color: blueviolet;
+}
+
+
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+#proximity-msg {
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.turns-left-container {
+    display: flex;
+    align-items: flex-start;
+    padding: 20px;
+
+    p {
+        font-family: "Roboto", Arial, Helvetica, sans-serif;
+        font-weight: 600;
+        font-size: 1.3rem;
+        color: yellow;
+    }
+
+}
+
+
+
+#proximity-msg p {
+    background: linear-gradient(yellow, rgb(255, 187, 0));
+    background-clip: text;
+    color: transparent;
+    text-align: center;
+    font-family: "Chewy", Arial, Helvetica, sans-serif;
+    font-size: 3rem;
+    display: inline;
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.233));
+
+    animation: zoomInRebound 0.2s cubic-bezier(0.25, 1.5, 0.5, 1) forwards;
+}
+
+@keyframes zoomInRebound {
+    0% {
+        transform: scale(0);
+        /* Start small */
+    }
+
+    70% {
+        transform: scale(1.1);
+        /* Overshoot */
+    }
+
+    100% {
+        transform: scale(1);
+        /* Settle to final state */
+    }
+}
